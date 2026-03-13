@@ -16,12 +16,14 @@ app.use(express.json());
 ================================ */
 
 const db = mysql.createPool({
-host: "localhost",
-user: "root",
-password: "madhank@2005",
-database: "mini_amazon",
-waitForConnections: true,
-connectionLimit: 10
+  host: "mini-amazon-db-mini-amazon-project.f.aivencloud.com",
+  user: "avnadmin",
+  password: "MadhanK@17052005",
+  database: "defaultdb",
+  port: 23534,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 console.log("✅ MySQL Pool Connected");
