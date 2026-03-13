@@ -18,7 +18,7 @@ app.use(express.json());
 const db = mysql.createPool({
   host: "mini-amazon-db-mini-amazon-project.f.aivencloud.com",
   user: "avnadmin",
-  password: "MadhanK@17052005",
+  password: "AVNS_XSVB7yXlNGhwT5lBQMo",
   database: "defaultdb",
   port: 23534,
   ssl: {
