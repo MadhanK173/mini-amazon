@@ -176,27 +176,25 @@ email:user.email
 });
 
 
-/* ================================
-   GET ALL PRODUCTS
+/* ===============================
+   PRODUCTS API
 ================================ */
 
-app.get("/products",(req,res)=>{
+app.get("/api/products", (req, res) => {
 
-const sql = "SELECT * FROM products";
+  const sql = "SELECT * FROM products";
 
-db.query(sql,(err,result)=>{
+  db.query(sql, (err, result) => {
 
-if(err){
-console.log(err);
-return res.json({success:false});
-}
+    if (err) {
+      console.error("Database error:", err);
+      res.status(500).json({ error: "Database error" });
+    } 
+    else {
+      res.json(result);
+    }
 
-res.json({
-success:true,
-products:result
-});
-
-});
+  });
 
 });
 
